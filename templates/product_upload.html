@@ -1,0 +1,15 @@
+{% if messages %}
+    {% for message in messages %}
+        <div>
+        <strong>{{ message|safe }}</strong>
+        </div>
+    {% endfor %}
+{% else %}
+    <form method="post" enctype="multipart/form-data" >
+    {% csrf_token %}
+    <label> Загрузите файл</label>
+    <input type="file" name="file">
+    <button type="submit">Загрузить</button>
+    </form>
+    <li><a href="{% url 'product' %}">Результаты загрузки</a></li>
+{% endif %}

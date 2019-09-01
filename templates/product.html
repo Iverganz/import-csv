@@ -1,0 +1,40 @@
+﻿
+<table>
+    <tr>
+        <th>Код</th>
+        <th>Наименование</th>
+        <th>Уровень 1</th>
+        <th>Уровень 2</th>
+        <th>Уровень 3</th>
+        <th>Цена</th>
+        <th>Цена СП</th>
+        <th>Количество</th>
+        <th>Свойства</th>
+        <th>Единицы измерения</th>
+        <th>Изображение</th>
+        <th>Отображать</th>
+        <th>Описание</th>
+    </tr>
+    {% for product in products %}
+    <tr>
+        <td>{{ product.id }}</td>
+        <td>{{ product.title }}</td>
+        <td>{{ product.level1 }}</td>
+        <td>{{ product.level2}}</td>
+        <td>{{ product.level3}}</td>
+        <td>{{ product.price}}</td>
+        <td>{{ product.priceSP }}</td>
+        <td>{{ product.quantity }}</td>
+        <td>{{ product.property }}</td>
+        <td>{{ product.joint }}</td>
+        <td>{{ product.units}}</td>
+        <td>{{ product.pic }}</td>
+        <td>{% if product.show %}
+            1
+            {% else %} 0
+            {% endif %}
+        </td>
+        <td>{{ product.description }}</td>
+    </tr>
+    {% endfor %}
+</table>
